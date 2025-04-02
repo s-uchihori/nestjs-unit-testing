@@ -13,8 +13,33 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model Category {
+  id    Int             @id @default(autoincrement())
+  name  String
+  items InventoryItem[] // 在庫アイテムとの1対多のリレーション
+}
+
+model InventoryItem {
+  id           Int           @id @default(autoincrement())
+  name         String
+  description  String? // オプショナルな説明
+  quantity     Int           @default(0)
+  price        Float // 単価（必要に応じてDecimal型に変更も可能）
+  categoryId   Int
+  category     Category      @relation(fields: [categoryId], references: [id])
+  transactions Transaction[] // このアイテムに関連する取引履歴
+}
+
+model Transaction {
+  id        Int             @id @default(autoincrement())
+  itemId    Int
+  item      InventoryItem   @relation(fields: [itemId], references: [id])
+  type      TransactionType // 取引の種類（入庫/出庫）
+  quantity  Int // 取引数量
+  timestamp DateTime        @default(now()) // 取引日時
+}
+
+enum TransactionType {
+  INBOUND // 入庫
+  OUTBOUND // 出庫
 }
