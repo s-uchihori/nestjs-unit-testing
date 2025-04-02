@@ -1,8 +1,8 @@
 ```
 mv .env.develop .env
 npm i
-pnpm push:prisma
-npm run start:dev
+npm run push:prisma
+npm run test:watch
 ```
 
 # お題
