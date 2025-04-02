@@ -1,8 +1,8 @@
 ```
 mv .env.develop .env
-pnpm i
-pnpm prisma db push
-pnpm run start:dev
+npm i
+pnpm push:prisma
+npm run start:dev
 ```
 
 # お題
