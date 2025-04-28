@@ -24,9 +24,9 @@
     "push:prisma":"prisma db push"
   },
   "dependencies": {
-    "@nestjs/common": "^11.0.12",
-    "@nestjs/core": "^11.0.12",
-    "@nestjs/platform-express": "^11.0.12",
+    "@nestjs/common": "^11.0.13",
+    "@nestjs/core": "^11.0.13",
+    "@nestjs/platform-express": "^11.0.13",
     "@prisma/client": "^6.5.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
@@ -35,9 +35,9 @@
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.23.0",
     "@faker-js/faker": "^9.6.0",
-    "@nestjs/cli": "^11.0.5",
-    "@nestjs/schematics": "^11.0.0",
-    "@nestjs/testing": "^11.0.12",
+    "@nestjs/cli": "^11.0.6",
+    "@nestjs/schematics": "^11.0.3",
+    "@nestjs/testing": "^11.0.13",
     "@swc/cli": "^0.6.0",
     "@swc/core": "^1.11.16",
     "@types/express": "^5.0.1",
